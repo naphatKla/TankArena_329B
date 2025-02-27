@@ -4,9 +4,10 @@ using UnityEngine;
 public abstract class Coin : NetworkBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
-    protected int coinValue;
+
+    protected int coinValue = 10;
     protected bool alreadyCollected;
-    
+
     public abstract int Collect();
 
     public void SetValue(int value)
@@ -17,5 +18,10 @@ public abstract class Coin : NetworkBehaviour
     protected void Show(bool show)
     {
         spriteRenderer.enabled = show;
+    }
+
+    public void Reset()
+    {
+        alreadyCollected = false;
     }
 }
