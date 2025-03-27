@@ -73,7 +73,7 @@ public class ProjectileLauncher : NetworkBehaviour
     private void PrimaryFireServerRpc(Vector3 spawnPos, Vector3 direction)
     {
         if (wallet.TotalCoins.Value < costToFire) return;
-
+        
         wallet.SpendCoins(costToFire);
         
         GameObject projectileInstance = Instantiate(
